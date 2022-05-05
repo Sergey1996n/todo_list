@@ -10,7 +10,6 @@
     android:textSize="@dimen/text_medium">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/item_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/string_item_background"
@@ -31,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|end"
             android:background="#FFFFFF"
-            android:contentDescription="@string/action_settings"
             android:minWidth="48dp"
             android:minHeight="48dp"
             app:srcCompat="@android:drawable/ic_menu_delete" />

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/AddItemActivity"
+        android:name="com.example.todo_list.fragment.AddItemFragment"
+        android:label="AddItemActivity">
+        <action
+            android:id="@+id/action_AddItemActivity_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.todo_list.fragment.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_AddItemActivity"
+            app:destination="@id/AddItemActivity" />
+        <action
+            android:id="@+id/action_mainFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="По умолчанию" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="По умолчанию" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.example.todo_list.fragment.DescriptionFragment"
+        android:label="DescriptionFragment"
+        tools:layout="@layout/fragment_description"
+        >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
+</navigation>
